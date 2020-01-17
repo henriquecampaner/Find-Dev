@@ -9,7 +9,7 @@ class SeacherController {
 
     const devs = await Dev.find({
       techs: {
-        $in: techsArray, // mongo operator
+        $in: techsArray,
       },
       location: {
         $near: {
@@ -22,7 +22,7 @@ class SeacherController {
       },
     });
 
-    return res.json(devs);
+    return res.json({ devs });
   }
 }
 
