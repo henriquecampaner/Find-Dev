@@ -40,9 +40,10 @@ class DevController {
         techs
       );
       sendMessage(sendSocketMessageTo, 'new-dev', dev);
-    }
 
-    return res.json(dev);
+      return res.json(dev);
+    }
+    return res.status(400).json({ error: 'User alredy exists.' });
   }
 
   async index(req, res) {
